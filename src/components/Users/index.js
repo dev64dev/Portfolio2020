@@ -2,26 +2,39 @@ import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { fetchData } from '../../redux/actions/usersActions';
 import User from '../User';
+import Loader from '../Layout/Loader/index';
+
+import './styles.scss';
 
 const Users = (props) => {
   const [users, setUsers] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     fetchData();
   }, []);
 
   const fetchData = async () => {
-    const res = await props.fetchData();
-    return await setUsers(res);
+    try {
+      setIsLoading(true);
+      const res = await props.fetchData();
+      setIsLoading(false);
+      return await setUsers(res);
+    } catch (error) {
+      setIsLoading(false);
+      console.log(error);
+    }
   };
 
-  return (
-    <div>
-      {props.usersState.users.map((item, index) => (
-        <User key={index} name={item.name} />
-      ))}
-    </div>
+  const showUsers = !isLoading ? (
+    props.usersState.users.map((item, index) => (
+      <User key={index} name={item.name} email={item.email.toLowerCase()} />
+    ))
+  ) : (
+    <Loader />
   );
+
+  return <div className="users">{showUsers}</div>;
 };
 
 const mapStateToProps = (state) => ({

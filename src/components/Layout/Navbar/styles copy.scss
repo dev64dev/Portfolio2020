@@ -1,8 +1,17 @@
 nav {
-  background-color: rgba(102, 97, 97, 0.644);
+  background-color: #fff;
   width: 100%;
-  color: white;
-  height: 6rem;
+  height: 4rem;
+  align-items: center;
+  display: flex;
+  border: 1px solid red;
+  position: fixed;
+  z-index: 999;
+  transition: all 0.3s;
+}
+.menu {
+  border: 1px solid blue;
+  list-style: none;
 }
 nav ul {
   margin: 0;
@@ -50,11 +59,11 @@ that have a width less or equal than 500px*/
   /* makes sure that the a tag will take the entire screen*/
   a {
     display: block;
+    text-decoration: none;
   }
   button {
     /*makes the button visible*/
     display: block;
-
     padding: 2vw;
     font-size: 3vh;
     background-color: #afe0ff;

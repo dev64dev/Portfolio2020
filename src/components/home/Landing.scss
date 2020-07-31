@@ -1,0 +1,108 @@
+.device::-webkit-scrollbar {
+  width: 12px;
+}
+
+.container {
+  width: 100%;
+  margin: auto;
+}
+
+.baner {
+  text-align: center;
+  letter-spacing: 0.1rem;
+  word-spacing: 0.3rem;
+  padding-top: 10rem;
+}
+.main {
+  font-size: 10rem;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+.boxes {
+  display: flex;
+  justify-content: center;
+  margin-top: 10rem;
+}
+.box1,
+.box2,
+.box3,
+.box4 {
+  width: 20rem;
+  height: 20rem;
+  border: 1px solid black;
+  background-color: red;
+  margin: 0 1rem 0 1rem;
+}
+.box2 {
+  background-color: yellow;
+}
+.box3 {
+  background-color: green;
+}
+.box4 {
+  background-color: blue;
+}
+.text-field {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  border: 1px solid red;
+  width: 80rem;
+  margin: 4rem auto 2rem;
+}
+
+.text-field input {
+  width: 40rem;
+  height: 3rem;
+  margin: 1rem 0px 1rem 0px;
+}
+.btn-wrapper {
+  text-align: center;
+}
+
+.btn {
+  text-decoration: none;
+  font-weight: 300;
+  background-color: rgb(0, 174, 255);
+  color: #fff;
+  display: inline-block;
+  text-align: center;
+  justify-content: space-between;
+  margin: auto;
+  cursor: pointer;
+}
+
+.btn-true,
+.btn-false {
+  width: 20rem;
+  height: 6rem;
+  margin: auto 1rem;
+}
+section {
+  background-color: #fafafa;
+}
+.second {
+  background-image: url('../../assets/home_img.jpg');
+}
+img {
+  width: 120rem;
+  height: 60rem;
+}
+// @media only screen and (max-width: 480px) {
+//   .container {
+//     width: 100%;
+//   }
+// }
+
+@media screen and (min-width: 967px) and (max-width: 1127px) {
+  .boxes {
+    flex-basis: calc(100% / 3);
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 967px) {
+  .boxes {
+    flex-basis: calc(100% / 2);
+    margin-bottom: 20px;
+  }
+}

@@ -1,0 +1,40 @@
+.header {
+  background-color: rgb(93, 93, 93);
+  align-items: center;
+  font-size: 1.6rem;
+  width: 100%;
+  height: 7rem;
+  display: flex;
+  justify-content: flex-end;
+  color: black;
+  z-index: 999;
+  transition: all 0.3s;
+  padding: 3rem 10%;
+}
+
+// nav {
+//   display: flex;
+//   justify-content: space-between;
+// }
+
+// .nav_links {
+//   display: flex;
+//   justify-content: space-between;
+//   list-style: none;
+// }
+
+// .nav_links li {
+//   transition: all 0.3s ease 0s;
+//   display: inline-block;
+// }
+// .nav_links li:hover {
+//   color: #0088a9;
+//   cursor: pointer;
+// }
+// .menu {
+//   display: flex;
+//   justify-content: space-between;
+// }
+// .active-link {
+//   color: yellow;
+// }

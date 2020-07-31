@@ -1,9 +1,9 @@
 import React from 'react';
-
+import './styles.scss';
 const User = (props) => {
   return (
-    <div>
-      <h1>{props.name}</h1>
+    <div className="user">
+      <p>{props.name}</p>
       <p>{props.email}</p>
       <p>{props.id}</p>
     </div>
