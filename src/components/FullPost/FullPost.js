@@ -5,7 +5,6 @@ import './FullPost.scss';
 const FullPost = (props) => {
   const [isLoading, setIsLoading] = useState(false);
   const [loadedPost, setLoadedPost] = useState(null);
-  // const [post, setPost] = useState();
 
   useEffect(() => {
     fetchData();
@@ -26,22 +25,22 @@ const FullPost = (props) => {
     }
   };
 
-const deletePostHandler = async()=>{
-  if (props.id) {
-    try {
-      setIsLoading(true);
-      const res = await axios.delete(
-        `https://jsonplaceholder.typicode.com/posts/${props.id}`
-      );
-      console.log(res);
+  const deletePostHandler = async () => {
+    if (props.id) {
+      try {
+        setIsLoading(true);
+        const res = await axios.delete(
+          `https://jsonplaceholder.typicode.com/posts/${props.id}`
+        );
+        console.log(res);
 
-      setLoadedPost(res.data);
-      setIsLoading(false);
-    } catch (error) {
-      console.log(error);
+        setLoadedPost(res.data);
+        setIsLoading(false);
+      } catch (error) {
+        console.log(error);
+      }
     }
-  }
-}
+  };
 
   let selectedPost = (
     <p style={{ textAlign: 'center' }}>Please select a post..</p>
@@ -55,7 +54,9 @@ const deletePostHandler = async()=>{
         <h1>{loadedPost.title}</h1>
         <p>{loadedPost.body}</p>
         <div className="edit">
-          <button className="delete" onClick={deletePostHandler}>Delete</button>
+          <button className="delete" onClick={deletePostHandler}>
+            Delete
+          </button>
         </div>
       </div>
     );
